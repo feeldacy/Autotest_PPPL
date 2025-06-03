@@ -14,8 +14,6 @@ public class LoginPage {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    private static final String LOGIN_URL = "https://digitalmap-umbulharjo.madanateknologi.web.id/login";
-
     // Locators
     public By emailLocator = By.id("email");
     public By passwordLocator = By.id("password");
