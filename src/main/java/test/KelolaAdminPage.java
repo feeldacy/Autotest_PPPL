@@ -24,6 +24,8 @@ public class KelolaAdminPage {
     public By fieldPass = By.id("password");
     public By fieldConfirmPass = By.id("confirmPassword");
     public By tamabahAdminSideBar = By.xpath("//*[@id=\"tambahAdminModal\"]/div[1]/h3");
+    public By txtTambahAdmin = By.cssSelector("#tambahAdminModal .modal-header h3");
+    public By tombolTambah = By.xpath("//button[text()='Tambah']");
 
     public void clickButton(By locator) {
         WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
@@ -35,6 +37,7 @@ public class KelolaAdminPage {
         element.sendKeys(query);
     }
 
+//    GETTER
     public String getCurrentUrl() {
         wait.until(ExpectedConditions.urlContains("admin"));
         return driver.getCurrentUrl();
@@ -43,5 +46,25 @@ public class KelolaAdminPage {
     public String getText(By element){
         return  driver.findElement(element).getText();
     }
+    public Boolean isTxtTambahAdminVisible() {
+        try {
+            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(txtTambahAdmin));
+            return element.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public boolean isAdminEmailExist(String email) {
+        try {
+            By emailLocator = By.xpath("//table[@id='adminTable']//td//div[contains(text(),'" + email + "')]");
+            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(emailLocator));
+            return element.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+
 
 }
