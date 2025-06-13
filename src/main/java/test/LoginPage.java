@@ -32,7 +32,6 @@ public class LoginPage {
         element.sendKeys(query);
     }
 
-
     public void clickLoginButton() {
         WebElement loginBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(loginButtonLocator));
         loginBtn.click();
