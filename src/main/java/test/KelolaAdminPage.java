@@ -18,6 +18,8 @@ public class KelolaAdminPage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
+
+//    LOCATOR
     public By tambahAdminBtn = By.id("tambahAdminBtn");
     public By fieldName = By.id("name");
     public By fieldEmail = By.id("email");
@@ -26,7 +28,10 @@ public class KelolaAdminPage {
     public By tamabahAdminSideBar = By.xpath("//*[@id=\"tambahAdminModal\"]/div[1]/h3");
     public By txtTambahAdmin = By.cssSelector("#tambahAdminModal .modal-header h3");
     public By tombolTambah = By.xpath("//*[@id=\"tambahAdminForm\"]/div[5]/button[2]");
+    public By toastMessage = By.xpath("//div[contains(@class, 'toastify') and contains(text(), 'Password yang dimasukkan')]");
 
+
+    //    ACTION
     public void clickButton(By locator) {
         WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         button.click();
@@ -65,6 +70,13 @@ public class KelolaAdminPage {
         }
     }
 
-
+    public boolean isPesanErrorMenambahkanAdminVisible() {
+        try {
+            WebElement toast = wait.until(ExpectedConditions.visibilityOfElementLocated(toastMessage));
+            return toast.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
 }

@@ -34,7 +34,7 @@ public class hapusTanahStepDef extends baseUtil{
     }
 
     @Then("Super Admin menekan tombol {string} pada konfirmasi")
-    public void super_admin_menekan_tombol_hapus_pada_modal(String tombol) {
+    public void super_admin_menekan_tombol_hapus_pada_konfirmasi(String tombol) {
         kelolaTanahPage.clickButton(kelolaTanahPage.tombolDeleteModal);
     }
 
