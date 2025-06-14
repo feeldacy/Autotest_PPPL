@@ -25,7 +25,7 @@ public class KelolaAdminPage {
     public By fieldConfirmPass = By.id("confirmPassword");
     public By tamabahAdminSideBar = By.xpath("//*[@id=\"tambahAdminModal\"]/div[1]/h3");
     public By txtTambahAdmin = By.cssSelector("#tambahAdminModal .modal-header h3");
-    public By tombolTambah = By.xpath("//button[text()='Tambah']");
+    public By tombolTambah = By.xpath("//*[@id=\"tambahAdminForm\"]/div[5]/button[2]");
 
     public void clickButton(By locator) {
         WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));

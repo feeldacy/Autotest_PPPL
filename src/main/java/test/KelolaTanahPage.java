@@ -15,15 +15,14 @@ public class KelolaTanahPage {
 
     public KelolaTanahPage(WebDriver driver){
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
 //    LOCATOR
-    public By detailBtn = By.xpath("//*[@id=\"groundTable\"]/tbody/tr[1]/td[5]/div/button[2]");
-    public By modalDetailTitle = By.xpath("//*[@id=\"detailModal\"]/div/h2");
     public By tombolDelete = By.xpath("//table[@id='groundTable']//tr[td[2][normalize-space()='test1']]//button[contains(@class, 'delete')]");
     public By tombolDeleteModal = By.xpath("//button[contains(text(),'Hapus')]");
     public By txtKonfirmasiHapus = By.xpath("//h2[contains(text(), 'Apakah yakin akan menghapus tanah')]");
+    public By tombolRecoverData = By.xpath("/html/body/div[2]/div/div[1]/div/button[2]");
 
 
 
@@ -39,6 +38,7 @@ public class KelolaTanahPage {
 
 
     public String getCurrentUrl() {
+        wait.until(ExpectedConditions.urlContains("Manage"));
         return driver.getCurrentUrl();
     }
 

@@ -19,10 +19,9 @@ public class tambahAdminStepDef extends baseUtil{
     String generatedEmail;
 
     @Given("Super Admin sudah login ke dalam sistem")
-    public void super_admin_sudah_login(){
+    public void superAdminSudahLogin(){
         loginStep();
     }
-
 
     @When("Super Admin navigasi ke menu kelola admin")
     public void superAdminNavigasiKeMenuKelolaAdmin() {
@@ -40,7 +39,7 @@ public class tambahAdminStepDef extends baseUtil{
 
     @And("Super Admin mengisi form dengan data valid")
     public void superAdminMengisiFormDenganDataValid() {
-        kelolaAdminPage.kirimData(kelolaAdminPage.fieldName, "TestPPPL");
+        kelolaAdminPage.kirimData(kelolaAdminPage.fieldName, "TestPPPL2");
         generatedEmail = "TestPPPL" + System.currentTimeMillis() + "@gmail.com";
         kelolaAdminPage.kirimData(kelolaAdminPage.fieldEmail, generatedEmail);
         kelolaAdminPage.kirimData(kelolaAdminPage.fieldPass, "admin123");
