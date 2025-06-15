@@ -21,6 +21,7 @@ public class NavbarComponents {
     //Loactor
     public By kelolaTanahMenu = By.id("manageGround");
     public By kelolaAdminMenu = By.id("manageAdmin");
+    public By profilAvatar = By.cssSelector("div.profile-avatar");
 
     public void clickButton(By locator) {
         WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
