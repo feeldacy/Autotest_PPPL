@@ -8,6 +8,6 @@ Feature: Validasi Tambah Admin oleh Super Admin
     And Super Admin memasukkan email "rahmat@example.com"
     And Super Admin memasukkan password "password123"
     And Super Admin memasukkan konfirmasi password "password321"
-    And Super Admin mengklik tombol "Tambah"
-    Then sistem menampilkan pesan error "Password dan Konfirmasi Password tidak sama"
+    And Super Admin mengklik tombol Tambah
+    Then sistem menampilkan pesan error "Password yang dimasukkan tidak cocok✖"
     And admin baru tidak ditambahkan ke dalam sistem

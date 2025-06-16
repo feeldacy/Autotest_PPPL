@@ -18,7 +18,7 @@ public class LoginPage {
     public By emailLocator = By.id("email");
     public By passwordLocator = By.id("password");
     public By loginButtonLocator = By.xpath("//button[contains(text(),'Masuk') or @type='submit']");
-    public By errorMessageLocator = By.xpath("//div[contains(@class,'alert') or contains(@class,'error')]");
+    public By errorMessageLocator = By.xpath("//div[contains(@class, 'toastify') and contains(text(), 'Login Gagal')]");
     public By dashboardHeaderLocator = By.xpath("//h1[contains(text(),'Dashboard') or contains(text(),'Welcome')]");
 
     // Constructor
@@ -27,6 +27,7 @@ public class LoginPage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
+//    ACTION
     public void kirimData(By field, String query) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(field));
         element.sendKeys(query);
@@ -37,6 +38,16 @@ public class LoginPage {
         loginBtn.click();
     }
 
+    public boolean isLoginGagalToastVisible() {
+        try {
+            WebElement toast = wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessageLocator));
+            return toast.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+//    GETTER
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }

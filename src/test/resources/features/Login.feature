@@ -11,5 +11,5 @@ Feature: Login
         Then Super Admin berhasil diarahkan ke dashboard sesuai role
 
         Examples:
-            | email                    | password    |
+            | email                     | password    |
             | testingSuperA@gmail.com  | jajaSAdmin  |

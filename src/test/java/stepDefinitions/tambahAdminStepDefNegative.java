@@ -20,8 +20,8 @@ public class tambahAdminStepDefNegative extends baseUtil {
         Assertions.assertEquals("https://digitalmap-umbulharjo.madanateknologi.web.id/admin", kelolaAdminPage.getCurrentUrl());
     }
 
-    @When("Super Admin menekan tombol {string}")
-    public void superAdminMengklikTombol(String tombol) {
+    @When("Super Admin menekan tombol \"Tambah Admin\"")
+    public void superAdminMenekanTombolTambahAdmin() {
         kelolaAdminPage.clickButton(kelolaAdminPage.tambahAdminBtn);
         Assertions.assertTrue(kelolaAdminPage.isTxtTambahAdminVisible());
     }
@@ -46,7 +46,7 @@ public class tambahAdminStepDefNegative extends baseUtil {
         kelolaAdminPage.kirimData(kelolaAdminPage.fieldConfirmPass, konfirmasiPassword);
     }
 
-    @And("Super Admin mengklik tombol \"Tambah\"")
+    @And("Super Admin mengklik tombol Tambah")
     public void superAdminMengklikTombolTambah() {
         kelolaAdminPage.clickButton(kelolaAdminPage.tombolTambah);
     }
