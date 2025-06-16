@@ -34,7 +34,7 @@ public class EditTanahPage {
 
     //    GETTER
     public String getCurrentUrl() {
-        wait.until(ExpectedConditions.urlContains("admin"));
+        wait.until(ExpectedConditions.urlContains("EditGround"));
         return driver.getCurrentUrl();
     }
 }

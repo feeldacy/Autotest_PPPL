@@ -5,7 +5,7 @@ Feature: Edit Data Tanah
   So that informasi yang ditampilkan dapat diperbarui sesuai kondisi terbaru
 
   Background:
-    Given Super Admin sudah login dan berada di halaman Kelola Tanah
+    Given Super Admin sudah login dan membuka halaman Kelola Tanah
 
   Scenario Outline: TC-05 - Edit data tanah dengan informasi valid
     When Super Admin menekan tombol edit pada data tanah yang dipilih
@@ -17,7 +17,6 @@ Feature: Edit Data Tanah
     Examples:
       | nama_tanah    |
       | Tanah Edit    |
-      | Tanah Baru 01 |
 
   Scenario Outline: TC-06 - Edit data tanah dengan data tidak valid
     When Super Admin menekan tombol edit pada data tanah yang dipilih

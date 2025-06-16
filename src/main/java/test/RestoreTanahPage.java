@@ -22,7 +22,9 @@ public class RestoreTanahPage {
     public By tombolRestore = By.xpath("//*[@id=\"deletedGroundTable\"]/tbody/tr[1]/td[5]/div/button[1]");
     public By tombolPulihkan = By.xpath("//*[@id=\"restoreModal\"]/div/div[3]/div[2]/button[2]");
     public By titleModal = By.xpath("//*[@id=\"restoreModal\"]/div/div[2]/h2");
-    public By tombolKembali = By.xpath("/html/body/div[2]/div/div[1]/button");
+    public By tombolKembali = By.id("backBtn");
+    public By toastMessageSuccess = By.xpath("//div[contains(@class, 'toastify') and contains(text(), 'Data berhasil, dipulihkan')]");
+
 
     public void clickButton(By locator) {
         WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));

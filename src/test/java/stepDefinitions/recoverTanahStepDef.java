@@ -11,6 +11,10 @@ import test.RestoreTanahPage;
 
 public class recoverTanahStepDef extends baseUtil {
 
+    RestoreTanahPage restoreTanahPage = new RestoreTanahPage(baseUtil.driver);
+    NavbarComponents navbarComponents = new NavbarComponents(baseUtil.driver);
+    KelolaTanahPage kelolaTanahPage = new KelolaTanahPage(baseUtil.driver);
+
     @Given("Super Admin sudah login ke dalam sistem - Restore Tanah")
     public void superAdminSudahLoginKeSistem(){
         loginStep();
@@ -18,37 +22,25 @@ public class recoverTanahStepDef extends baseUtil {
 
     @When("Super Admin membuka halaman Kelola Tanah")
     public void superAdminMembukaHalamanKelolaTanah() {
-        NavbarComponents navbarComponents = new NavbarComponents(baseUtil.driver);
         navbarComponents.clickButton(navbarComponents.kelolaTanahMenu);
-
-        KelolaTanahPage kelolaTanahPage = new KelolaTanahPage(baseUtil.driver);
         String currentUrl = kelolaTanahPage.getCurrentUrl();
-
         Assertions.assertEquals("https://digitalmap-umbulharjo.madanateknologi.web.id/ManageGround", currentUrl);
     }
 
     @And("Super Admin mengklik tombol Pulihkan Data")
     public void superAdminMengklikTombolPulihkanData() {
-        KelolaTanahPage kelolaTanahPage = new KelolaTanahPage(baseUtil.driver);
         kelolaTanahPage.clickButton(kelolaTanahPage.tombolRecoverData);
-
-        RestoreTanahPage restoreTanahPage = new RestoreTanahPage(baseUtil.driver);
         Assertions.assertEquals("https://digitalmap-umbulharjo.madanateknologi.web.id/restore-data", restoreTanahPage.getCurrentUrl());
     }
 
     @And("Super Admin menekan tombol aksi reload")
     public void superAdminMenekanTombolAksi() {
-        RestoreTanahPage restoreTanahPage = new RestoreTanahPage(baseUtil.driver);
-
         restoreTanahPage.clickButton(restoreTanahPage.tombolRestore);
-
         Assertions.assertEquals("Konfirmasi Pemulihan Data", restoreTanahPage.getText(restoreTanahPage.titleModal));
     }
 
     @And("Super Admin mengonfirmasi dengan menekan tombol Pulihkan Data")
     public void superAdminMengonfirmasiDenganMenekanTombolPulihkanData() {
-        RestoreTanahPage restoreTanahPage = new RestoreTanahPage(baseUtil.driver);
-
         restoreTanahPage.clickButton(restoreTanahPage.tombolPulihkan);
 
         baseUtil.driver.navigate().refresh();
@@ -56,13 +48,13 @@ public class recoverTanahStepDef extends baseUtil {
 
     @Then("Data tanah yang sebelumnya dihapus berhasil dipulihkan")
     public void dataTanahYangSebelumnyaDihapusBerhasilDipulihkan() {
-        //
+        String toastMsg = restoreTanahPage.getText(restoreTanahPage.toastMessageSuccess);
+
+        Assertions.assertEquals("Data berhasil, dipulihkan!", toastMsg);
     }
 
     @And("Data tersebut kembali tampil di daftar pada halaman Kelola Tanah")
     public void dataTersebutKembaliTampilDiDaftarPadaHalamanKelolaTanah() {
-        RestoreTanahPage restoreTanahPage = new RestoreTanahPage(baseUtil.driver);
-
         restoreTanahPage.clickButton(restoreTanahPage.tombolKembali);
         // verification
     }
