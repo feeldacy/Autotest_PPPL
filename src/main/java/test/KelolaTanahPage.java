@@ -20,6 +20,9 @@ public class KelolaTanahPage {
 
 //    LOCATOR
     public By tombolDelete = By.xpath("//table[@id='groundTable']//tr[td[2][normalize-space()='test1']]//button[contains(@class, 'delete')]");
+    public By tombolEdit = By.xpath("//*[@id=\"groundTable\"]/tbody/tr[1]/td[5]/div/button[2]");
+    public String id = driver.findElement(By.xpath("//*[@id='groundTable']/tbody/tr[1]/td[5]/div/button[2]"))
+            .getAttribute("data-id");
     public By tombolDeleteModal = By.xpath("//button[contains(text(),'Hapus')]");
     public By txtKonfirmasiHapus = By.xpath("//h2[contains(text(), 'Apakah yakin akan menghapus tanah')]");
     public By tombolRecoverData = By.xpath("/html/body/div[2]/div/div[1]/div/button[2]");
@@ -45,7 +48,6 @@ public class KelolaTanahPage {
     public String getText(By element){
         return  driver.findElement(element).getText();
     }
-
 
     public Boolean isTxtKonfirmasiHapusnVisible() {
         try {

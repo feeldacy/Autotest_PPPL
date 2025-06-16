@@ -9,8 +9,8 @@ public class baseUtil {
 
     protected void loginStep(){
         driver.get("https://digitalmap-umbulharjo.madanateknologi.web.id/login");
-        driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("testingSuperA@gmail.com");
-        driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("jajaSAdmin");
+        driver.findElement(By.id("email")).sendKeys("testingSuperA@gmail.com");
+        driver.findElement(By.id("password")).sendKeys("jajaSAdmin");
         driver.findElement(By.xpath("//button[contains(text(),'Masuk') or @type='submit']")).click();
     }
 }

@@ -61,7 +61,9 @@ public class recoverTanahStepDef extends baseUtil {
 
     @And("Data tersebut kembali tampil di daftar pada halaman Kelola Tanah")
     public void dataTersebutKembaliTampilDiDaftarPadaHalamanKelolaTanah() {
-        baseUtil.driver.navigate().back();
+        RestoreTanahPage restoreTanahPage = new RestoreTanahPage(baseUtil.driver);
+
+        restoreTanahPage.clickButton(restoreTanahPage.tombolKembali);
         // verification
     }
 }
