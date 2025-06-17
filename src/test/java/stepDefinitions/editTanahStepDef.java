@@ -15,7 +15,7 @@ public class editTanahStepDef extends baseUtil{
     EditTanahPage editTanahPage = new EditTanahPage(baseUtil.driver);
 
     @Given("Super Admin sudah login dan berada di halaman Kelola Tanah")
-    public void super_admin_sudah_login(){
+    public void super_telah_masuk_ke_sistem(){
         loginStep();
         navbarComponents.clickButton(navbarComponents.kelolaTanahMenu);
         Assertions.assertEquals("https://digitalmap-umbulharjo.madanateknologi.web.id/ManageGround", kelolaTanahPage.getCurrentUrl());
@@ -25,7 +25,7 @@ public class editTanahStepDef extends baseUtil{
     @When("Super Admin menekan tombol edit pada data tanah yang dipilih")
     public void superAdminMenekanTombolEditPadaDataTanahYangDipilih() {
         kelolaTanahPage.clickButton(kelolaTanahPage.tombolEdit);
-        Assertions.assertEquals("https://digitalmap-umbulharjo.madanateknologi.web.id/EditGround/" + kelolaTanahPage.id, editTanahPage.getCurrentUrl());
+        Assertions.assertEquals("https://digitalmap-umbulharjo.madanateknologi.web.id/EditGround/DT-00002", editTanahPage.getCurrentUrl());
     }
 
     @And("Super Admin mengisi form edit dengan data baru {string}")

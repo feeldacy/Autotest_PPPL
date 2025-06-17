@@ -13,7 +13,11 @@ public class hapusTanahStepDef extends baseUtil{
     KelolaTanahPage kelolaTanahPage = new KelolaTanahPage(baseUtil.driver);
     NavbarComponents navbarComponents = new NavbarComponents(baseUtil.driver);
 
+<<<<<<< HEAD
     @Given("Super Admin sudah terjadi login dan berada di halaman Kelola Tanah")
+=======
+    @Given("Super Admin sudah login dan membuka halaman Kelola Tanah")
+>>>>>>> c983be921f32d12523c8cd52b584eb88f61679f9
     public void super_admin_sudah_login(){
 
         loginStep();
