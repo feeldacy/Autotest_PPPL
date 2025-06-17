@@ -26,6 +26,7 @@ public class KelolaTanahPage {
     public By tombolDeleteModal = By.xpath("//button[contains(text(),'Hapus')]");
     public By txtKonfirmasiHapus = By.xpath("//h2[contains(text(), 'Apakah yakin akan menghapus tanah')]");
     public By tombolRecoverData = By.xpath("/html/body/div[2]/div/div[1]/div/button[2]");
+    public By btnTambahTanah = By.xpath("//button[@onclick=\"window.location.href='/AddGround'\"]");
 
 
 
@@ -67,6 +68,7 @@ public class KelolaTanahPage {
             return false;
         }
     }
+
 
 
 }

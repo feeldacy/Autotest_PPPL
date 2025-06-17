@@ -7,7 +7,7 @@ Feature: Validasi message password untuk login oleh Super Admin
     Given Super Admin memiliki akun dengan berisi email "<email>" dan password "<password>"
     When Super Admin membuka halaman login user
     And Super Admin memasukkan data email "<email>" dan password "<password>"
-    And Super Admin menekan button Masuk
+    When Super Admin menekan button Masuk
     Then Sistem menampilkan error "Password salah, mohon masukkan password yang sesuai"
 
     Examples:

@@ -8,24 +8,21 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class NavbarComponents {
+public class TambahTanahPage {
 
     private WebDriver driver;
     private WebDriverWait wait;
 
-    public NavbarComponents(WebDriver driver){
+    public TambahTanahPage(WebDriver driver){
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(50));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
-    //Loactor
-    public By kelolaTanahMenu = By.id("manageGround");
-    public By kelolaAdminMenu = By.id("manageAdmin");
-    public By profilAvatar = By.cssSelector("div.profile-avatar");
-    public By kelolaTanah = By.id("manageGround");
+    public By tombolAdd = By.xpath("//button[text()='Add']");
 
     public void clickButton(By locator) {
         WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         button.click();
     }
+
 }

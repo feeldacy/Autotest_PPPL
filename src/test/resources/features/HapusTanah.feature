@@ -5,7 +5,7 @@ Feature: Hapus Data Tanah
   So that daftar data tanah tetap terjaga dan akurat
 
   Background:
-    Given Super Admin sudah login dan berada di halaman Kelola Tanah
+    Given Super Admin sudah terjadi login dan berada di halaman Kelola Tanah
 
   Scenario: TC-07 - Hapus data tanah dengan nama asset tertentu
     When Super Admin memilih data tanah dengan nama asset "test1" dan menekan tombol "Hapus"

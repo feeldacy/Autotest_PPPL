@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -24,7 +25,7 @@ public class loginStepDefNegative{
         Assertions.assertEquals("https://digitalmap-umbulharjo.madanateknologi.web.id/login", loginPage.getCurrentUrl());
     }
 
-    @When("Super Admin memasukkan data email {string} dan password {string}")
+    @And("Super Admin memasukkan data email {string} dan password {string}")
     public void super_admin_memasukkan_email_dan_password(String email, String password) {
         LoginPage loginPage = new LoginPage(baseUtil.driver);
 
