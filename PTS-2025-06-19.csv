@@ -1,0 +1,2 @@
+"id","title","test case id","author","assignee","actual result","status","milestone","severity","external issues","attachments","tags"
+"1","Pulihkan Data","","Amelia Ayuni Tri Cahyanti","Unassigned","Kembali dengan data yang telah di recover, tetapi ketika di page kelola tanah akan ada tampilan data tanah yang lama. Sehingga harus di refresh untuk menampilkan hasil yang sesuai.","Open","","Major","","",""
